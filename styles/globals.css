@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* small extras to match the screenshot look */
+body { @apply bg-gray-100; }
+.card-shadow { box-shadow: 0 10px 30px rgba(22,24,35,0.06); }
