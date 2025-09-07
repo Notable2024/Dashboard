@@ -24,13 +24,15 @@ export default function LoginForm({ onLogin }) {
    <div className="flex min-h-screen items-center justify-center bg-black text-white">
   {/* Left Side Image */}
   <div className="hidden md:flex w-1/1 h-screen">
-    <div className="w-full h-full bg-[url('assets/notablebanner.png')] bg-cover bg-center" />
+    <div className="w-full h-full bg-[url('assets/banner.png')] bg-cover bg-center" />
   </div>
-
       {/* Right Side Login Form */}
       <div className="flex w-full md:w-1/2 h-screen items-center justify-center px-6">
         <div className="max-w-md w-full">
-          <h2 className="text-3xl font-semibold text-center mb-8 text-purple-200">
+           <div className="flex justify-center">
+            <div className="w-60 h-30 bg-[url('assets/logo.png')] bg-cover bg-center" />
+          </div>
+          <h2 className="text-3xl font-semibold text-center mb-8 text-white">
             Welcome to <br /> Notable Dashboard
           </h2>
 
@@ -48,7 +50,7 @@ export default function LoginForm({ onLogin }) {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-2 rounded-lg bg-gray-900 text-gray-200 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full px-4 py-2 rounded-lg bg-gray-900 text-gray-200 border border-gray-700 focus:outline-none focus:ring-2 #C4A053"
               />
             </div>
 
@@ -59,19 +61,19 @@ export default function LoginForm({ onLogin }) {
                 placeholder="Enter your password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-2 rounded-lg bg-gray-900 text-gray-200 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full px-4 py-2 rounded-lg bg-gray-900 text-gray-200 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-white"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold hover:opacity-90 transition"
+              className="w-full py-2 rounded-lg bg-[#C4A053] text-white font-semibold hover:opacity-90 transition"
             >
-              Login
+             Sign Up
             </button>
 
             <div className="text-center mt-4">
-              <a href="#" className="text-sm text-purple-300 hover:underline">
+              <a href="#" className="text-sm text-white hover:underline">
                 Forgot password?
               </a>
             </div>
