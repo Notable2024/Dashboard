@@ -6,7 +6,7 @@ import { DashboardIcon } from './icons';
 import Link from 'next/link';
 
 const menuItems = [
-  { name: 'Dashboard', icon: <DashboardIcon />, path: '/' },
+  { name: 'Dashboard', icon: <DashboardIcon />, path: '/dashboard' },
   { name: 'Users', icon: <FiUsers />, path: '/users' },
   { name: 'Venues', icon: <FiMap />, path: '/venues' },
   { name: 'Check Ins', icon: <FiCheckSquare />, path: '/checkins' },

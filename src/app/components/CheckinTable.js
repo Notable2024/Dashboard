@@ -19,7 +19,7 @@ const users = [
   
 ];
 
-export default function CheckinsTable() {
+export default function CheckinTable() {
   const [currentPage, setCurrentPage] = useState(1);
   return (
     <>
