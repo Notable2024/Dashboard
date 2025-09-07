@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { FiUsers, FiMap, FiLogOut, FiCheckSquare } from 'react-icons/fi';
 import { DashboardIcon } from './icons';
 import Link from 'next/link';
@@ -15,6 +15,13 @@ const menuItems = [
 export default function Sidebar() {
   const [expanded, setExpanded] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+
+  const handleLogout = () => {
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("userEmail");
+    router.push("/");
+  };
 
   return (
     <div
@@ -52,7 +59,10 @@ export default function Sidebar() {
       </nav>
 
       {/* Footer */}
-      <div className="p-4 flex items-center gap-2">
+      <div
+        onClick={handleLogout}
+        className="p-4 flex items-center gap-2 cursor-pointer"
+      >
         <FiLogOut className="text-xl" />
         {expanded && <span>Logout</span>}
       </div>

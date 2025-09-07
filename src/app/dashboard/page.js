@@ -22,12 +22,6 @@ export default function Dashboard() {
     setIsLoading(false);
   }, [router]);
 
-  const handleLogout = () => {
-    localStorage.removeItem("authToken");
-    localStorage.removeItem("userEmail");
-    router.push("/");
-  };
-
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-900">
@@ -37,24 +31,18 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-8">
+    <div className="min-h-screen text-white p-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h1 className="text-4xl font-bold text-purple-200">
-              Welcome to the Dashboard 🚀
+            <h1 className="text-4xl font-bold text-black">
+              Welcome to the Dashboard 
             </h1>
             {userEmail && (
-              <p className="text-gray-300 mt-2">Logged in as: {userEmail}</p>
+              <p className="text-gray-500 mt-2">Logged in as: {userEmail}</p>
             )}
           </div>
-          <button
-            onClick={handleLogout}
-            className="px-6 py-2 bg-red-600 hover:bg-red-700 rounded-lg transition-colors"
-          >
-            Logout
-          </button>
         </div>
 
         {/* Dashboard Content */}
@@ -92,21 +80,6 @@ export default function Dashboard() {
                 <p>System update completed</p>
                 <p className="text-gray-500">1 hour ago</p>
               </div>
-            </div>
-          </div>
-
-          <div className="bg-gray-800 p-6 rounded-lg border border-gray-700">
-            <h3 className="text-xl font-semibold mb-4 text-purple-200">Quick Actions</h3>
-            <div className="space-y-3">
-              <button className="w-full py-2 bg-purple-600 hover:bg-purple-700 rounded-lg transition-colors">
-                Add New User
-              </button>
-              <button className="w-full py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">
-                Generate Report
-              </button>
-              <button className="w-full py-2 bg-green-600 hover:bg-green-700 rounded-lg transition-colors">
-                View Analytics
-              </button>
             </div>
           </div>
         </div>
